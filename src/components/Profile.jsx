@@ -30,7 +30,7 @@ Profile.PT = {
   tag: PT.string.isRequired,
   location: PT.string.isRequired,
   avatar: PT.string.isRequired,
-  stats: PT.object,
+  stats: PT.objectOf(PT.number).isRequired,
 };
 
 export default Profile;
