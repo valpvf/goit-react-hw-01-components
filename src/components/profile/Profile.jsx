@@ -1,17 +1,18 @@
 import PT from 'prop-types';
+import s from './Profile.module.css';
 
 const Profile = ({ username, tag, location, avatar, stats }) => {
   const statsEl = Object.entries(stats);
   return (
     <div className="profile">
-      <div className="description">
-        <img src={avatar} alt="{username}" className="avatar" />
-        <p className="name">{username}</p>
+      <div className={s.description}>
+        <img src={avatar} alt={username} className={s.avatar} />
+        <p className={s.name}>{username}</p>
         <p className="tag">@{tag}</p>
         <p className="location">{location}</p>
       </div>
 
-      <ul className="stats">
+      <ul className={s.stats}>
         {statsEl.map(el => (
           <li key={el[0]}>
             <span className="label">
@@ -25,12 +26,12 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
   );
 };
 
-Profile.PT = {
+Profile.propTypes = {
   username: PT.string.isRequired,
   tag: PT.string.isRequired,
   location: PT.string.isRequired,
   avatar: PT.string.isRequired,
-  stats: PT.objectOf(PT.number).isRequired,
+  stats: PT.object.isRequired,
 };
 
 export default Profile;

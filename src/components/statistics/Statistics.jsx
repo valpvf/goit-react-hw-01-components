@@ -1,28 +1,27 @@
-const Statistics = () => {
-    return (
-      <section class="statistics">
-        <h2 class="title">Upload stats</h2>
+import PT from 'prop-types';
+import s from './Statistics.module.css';
 
-        <ul class="stat-list">
-          <li class="item">
-            <span class="label">.docx</span>
-            <span class="percentage"> 4%</span>
+const Statistics = ({ key, label, percentage, data }) => {
+  return (
+    <section className={s.statistics}>
+      <h2 className={s.title}>Upload stats</h2>
+
+      <ul className={s.statList}>
+        {data.map(el => (
+          <li key={el.id} className={s.item}>
+            <span className={s.label}>{el.label}</span>
+            <span className={s.percentage}> {el.percentage}%</span>
           </li>
-          <li class="item">
-            <span class="label">.mp3</span>
-            <span class="percentage">14%</span>
-          </li>
-          <li class="item">
-            <span class="label">.pdf</span>
-            <span class="percentage">41%</span>
-          </li>
-          <li class="item">
-            <span class="label">.mp4</span>
-            <span class="percentage">12%</span>
-          </li>
-        </ul>
-      </section>
-    );
-}
+        ))}
+      </ul>
+    </section>
+  );
+};
+
+Statistics.propTypes = {
+  label: PT.string,
+  percentage: PT.number,
+  data: PT.arrayOf(PT.object).isRequired,
+};
 
 export default Statistics;
