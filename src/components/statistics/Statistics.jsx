@@ -2,9 +2,10 @@ import PT from 'prop-types';
 import s from './Statistics.module.css';
 
 const Statistics = ({ key, label, percentage, data }) => {
+  const title = 'Upload stats';
   return (
     <section className={s.statistics}>
-      <h2 className={s.title}>Upload stats</h2>
+      {title && <h2 className={s.title}>{title}</h2>}
 
       <ul className={s.statList}>
         {data.map(el => (

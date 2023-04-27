@@ -1,9 +1,9 @@
 import { ItemStyled, ImageStyled, StatusStyled } from './FriendList.styled';
 
-const FriendList = friends => {  
+const FriendList = ({friends}) => {  
   return (
     <ul className="friend-list">
-      {friends.friends.map(el => (
+      {friends.map(el => (
         <ItemStyled key={el.id}>
           <StatusStyled>{el.isOnline}</StatusStyled>
           <ImageStyled src={el.avatar} alt={el.name} width="48" height="48" />

@@ -20,10 +20,6 @@ export const StatusStyled = styled.span`
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background-color: green;
-
-&false {
-    background-color: red;
-}
+  background-color: ${(props) => (props.children ? 'green' : 'red')};
 `;
 
