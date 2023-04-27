@@ -27,7 +27,12 @@ export const App = () => {
         avatar={user.avatar}
         stats={user.stats}
       />
-      <Statistics label={data.label} percentage={data.percentage} data={data} />
+      <Statistics
+        title="Upload stats"
+        label={data.label}
+        percentage={data.percentage}
+        data={data}
+      />
       <FriendList friends={friends} />
       <TransactionHistory items={transactions} />
     </div>

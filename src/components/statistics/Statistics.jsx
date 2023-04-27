@@ -1,8 +1,7 @@
 import PT from 'prop-types';
 import s from './Statistics.module.css';
 
-const Statistics = ({ key, label, percentage, data }) => {
-  const title = 'Upload stats';
+const Statistics = ({ title, key, label, percentage, data }) => {
   return (
     <section className={s.statistics}>
       {title && <h2 className={s.title}>{title}</h2>}
