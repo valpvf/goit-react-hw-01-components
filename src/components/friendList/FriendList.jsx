@@ -1,6 +1,7 @@
+import PT from 'prop-types';
 import { ItemStyled, ImageStyled, StatusStyled } from './FriendList.styled';
 
-const FriendList = ({friends}) => {  
+const FriendList = ({ friends }) => {
   return (
     <ul className="friend-list">
       {friends.map(el => (
@@ -12,6 +13,16 @@ const FriendList = ({friends}) => {
       ))}
     </ul>
   );
+};
+
+FriendList.propTypes = {
+  friends: PT.arrayOf(
+    PT.shape({
+      isOnline: PT.bool,
+      avatar: PT.string,
+      name: PT.string,
+    })
+  ),
 };
 
 export default FriendList;

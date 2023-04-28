@@ -1,7 +1,7 @@
 import PT from 'prop-types';
 import s from './TransactionHistory.module.css';
 
-const TransactionHistory = ({ items }) => {    
+const TransactionHistory = ({ items }) => {
   return (
     <table className={s.transactionHistory}>
       <thead>
@@ -26,9 +26,7 @@ const TransactionHistory = ({ items }) => {
 };
 
 TransactionHistory.propTypes = {
-  type: PT.string,
-  amount: PT.number,
-  currency: PT.string,
+  item: PT.arrayOf(PT.objectOf(PT.string)),
 };
 
 export default TransactionHistory;

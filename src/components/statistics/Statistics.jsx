@@ -19,9 +19,13 @@ const Statistics = ({ title, key, label, percentage, data }) => {
 };
 
 Statistics.propTypes = {
-  label: PT.string,
-  percentage: PT.number,
-  data: PT.arrayOf(PT.object).isRequired,
+  title: PT.string,
+  data: PT.arrayOf(
+    PT.shape({
+      label: PT.string,
+      percentage: PT.number,
+    })
+  ),
 };
 
 export default Statistics;
