@@ -1,7 +1,7 @@
 import PT from 'prop-types';
 import s from './Statistics.module.css';
 
-const Statistics = ({ title, key, label, percentage, data }) => {
+const Statistics = ({ title, data }) => {
   return (
     <section className={s.statistics}>
       {title && <h2 className={s.title}>{title}</h2>}
@@ -22,6 +22,7 @@ Statistics.propTypes = {
   title: PT.string,
   data: PT.arrayOf(
     PT.shape({
+      id: PT.string,
       label: PT.string,
       percentage: PT.number,
     })

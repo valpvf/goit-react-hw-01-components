@@ -18,6 +18,7 @@ const FriendList = ({ friends }) => {
 FriendList.propTypes = {
   friends: PT.arrayOf(
     PT.shape({
+      id: PT.number,
       isOnline: PT.bool,
       avatar: PT.string,
       name: PT.string,
